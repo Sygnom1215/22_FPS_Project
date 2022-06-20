@@ -195,25 +195,19 @@ public class MonsterCtrl : MonoBehaviour
     {
         if( collision.collider.CompareTag("BULLET") && currHp > 0)
         {
-            // 총알 삭제
             Destroy(collision.gameObject);
-            // 피격 애니메이션 실행
             anim.SetTrigger(hashHit);
 
-            // 충돌 지점
             Vector3 pos = collision.GetContact(0).point;
-            // 충알의 충돌 지점의 법선 벡터
             Quaternion rot = Quaternion.LookRotation(-collision.GetContact(0).normal);
-            // 혈흔 효과 생성
             ShowBloodEffect(pos, rot);
 
-            // 몬스터 hp 차감
             currHp -= 10;
             if( currHp <= 0 )
             {
                 state = State.DIE;
 
-                GameMgr.GetInstance().DisplayScore(50);
+                GameManager.GetInstance().DisplayScore(50);
             }
         }
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class GameMgr : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     // 점수 텍스트 연결 변수
     public TMP_Text scoreText;
@@ -40,17 +40,17 @@ public class GameMgr : MonoBehaviour
         }
     }
 
-    private static GameMgr instance;
+    private static GameManager instance;
 
-    public static GameMgr GetInstance()
+    public static GameManager GetInstance()
     {
         if( instance == null )
         {
-            instance = FindObjectOfType<GameMgr>();
+            instance = FindObjectOfType<GameManager>();
             if( instance == null )
             {
                 GameObject container = new GameObject("GameMgr");
-                instance = container.AddComponent<GameMgr>();
+                instance = container.AddComponent<GameManager>();
             }
         }
 

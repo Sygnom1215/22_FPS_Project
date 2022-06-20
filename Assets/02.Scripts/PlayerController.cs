@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour
             monster.SendMessage("OnPlayerDie", SendMessageOptions.DontRequireReceiver);
         }
 
-        GameMgr.GetInstance().IsGameOver = true;
+        GameManager.GetInstance().IsGameOver = true;
     }
 
     void DisplayHP()
