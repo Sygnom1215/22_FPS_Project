@@ -12,7 +12,9 @@ public class Item : MonoBehaviour
         if (collision.gameObject.CompareTag("PLAYER"))
         {
             Debug.Log("Eat Item!");
+            Destroy(this.gameObject);
         }
+
 
     }
 
