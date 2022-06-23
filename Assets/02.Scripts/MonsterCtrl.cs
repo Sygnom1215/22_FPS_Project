@@ -25,6 +25,8 @@ public class MonsterCtrl : MonoBehaviour
     // ¸ó½ºÅÍ »ç¸Á ¿©ºÎ
     public bool isDie = false;
 
+    public int damage = 10;
+
     // ÄÄÆ÷³ÍÆ® Ä³½Ì
     private Transform monsterTransform;
     private Transform targetTransform;
@@ -202,7 +204,7 @@ public class MonsterCtrl : MonoBehaviour
             Quaternion rot = Quaternion.LookRotation(-collision.GetContact(0).normal);
             ShowBloodEffect(pos, rot);
 
-            currHp -= 10;
+            currHp -= damage;
             if( currHp <= 0 )
             {
                 state = State.DIE;
