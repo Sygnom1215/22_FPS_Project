@@ -30,8 +30,8 @@ public class Item : MonoBehaviour
             monsterCtrl.damage = 50;
             yield return new WaitForSeconds(3f);
 
-            monsterCtrl.damage = 10;
-            StopAllCoroutines();
+            //monsterCtrl.damage = 10;
+            //StopAllCoroutines();
         }
     }
 
